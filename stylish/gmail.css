@@ -1,0 +1,7 @@
+/* For URLs on domain: mail.google.com */
+
+/* Hide right-hand pane */
+@namespace url(http://www.w3.org/1999/xhtml);
+td.Bu.y3 { display: none; }
+div.nH.if { margin: 3px; }
+.aeJ { padding-right: 0; }
