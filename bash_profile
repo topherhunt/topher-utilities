@@ -18,10 +18,6 @@ alias rt='ruby -Itest' # mainly for Glassfrog
 alias a='atom .'
 alias cheat='atom ~/Sites/personal/cheatsheets/'
 
-alias start_mysql='sudo /usr/local/mysql/support-files/mysql.server restart'
-# TODO: Remove this, it's not useful anymore
-# alias start_httpd='sudo apachectl restart; echo "Apache restart request sent."'
-
 # Add Git to PATH
 export PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH"
 # Add Mysql executables to PATH
@@ -47,5 +43,5 @@ export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
 
 # Enable autocomplete for Git command / branches and SSH aliases
-source ~/.git-autocomplete.bash
-source ~/.ssh-autocomplete.bash
+source ~/Sites/personal/utilities/.git-autocomplete.bash
+source ~/Sites/personal/utilities/.ssh-autocomplete.bash
