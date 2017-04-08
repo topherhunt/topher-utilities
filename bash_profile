@@ -9,7 +9,7 @@ alias gl='git log --pretty=format:"%h %ai (%an) | %s" --shortstat | ruby ~/Sites
 alias gd='git diff'
 alias gb='git branch'
 
-# Rails
+# Rails shortcuts
 alias rs='rails s'
 alias rc='rails c'
 alias be='bundle exec'
