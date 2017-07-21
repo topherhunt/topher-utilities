@@ -1,6 +1,6 @@
 {
   'open ~/Movies/Yoga' => 0,
-  'say "Start with 20 minutes of yoga"' => 20,
+  'say "Start with 12 minutes of yoga"' => 12,
   'say "Wrap up yoga and start back exercises for 3 minutes"' => 3.1,
   'say "Do wrist exercises for 1 minute"' => 1,
   'say "Now meditate for 2 minutes."' => 2,

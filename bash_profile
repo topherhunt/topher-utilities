@@ -17,6 +17,19 @@ alias rt='ruby -Itest' # mainly for Glassfrog
 
 alias a='atom .'
 alias cheat='atom ~/Sites/personal/cheatsheets/'
+alias morning='ruby ~/Sites/personal/utilities/mom/morning_routine.rb'
+
+alias y1='youtube-dl -f 140'
+alias y2='youtube-dl -f 17'
+
+# MySQL
+# I have MariaDB installed which you can start with `mysql.server start`
+# though it should be autostarted via brew services.
+alias start_mysql='sudo /usr/local/mysql/support-files/mysql.server restart'
+
+# PostgreSQL
+# I installed Postgres via Homebrew. Check that it's running with: `psql -h localhost`
+# No manual commands should be necessary.
 
 # Add Git to PATH
 export PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH"
@@ -35,7 +48,8 @@ export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/mysql/lib
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+# Removed: "\u@\h"
+export PS1="» \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -45,3 +59,6 @@ test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_i
 # Enable autocomplete for Git command / branches and SSH aliases
 source ~/Sites/personal/utilities/.git-autocomplete.bash
 source ~/Sites/personal/utilities/.ssh-autocomplete.bash
+
+# Hook in Kiex (Elixir version) scripts
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
