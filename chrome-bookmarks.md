@@ -1,3 +1,5 @@
 Open Workflowy in a minimalist pop-up window:
 
+```
 javascript:window.open('https://workflowy.com/', 'window_'+Math.random(), 'toolbar=no, menubar=no, resizable=yes, height=575, width=475, left=150, top=0');
+```

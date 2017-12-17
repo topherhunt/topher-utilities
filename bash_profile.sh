@@ -14,10 +14,11 @@ alias rs='rails s'
 alias rc='rails c'
 alias be='bundle exec'
 alias rt='ruby -Itest' # mainly for Glassfrog
+alias webpack='./bin/webpack-dev-server'
 
-alias a='atom .'
-alias cheat='atom ~/Sites/personal/cheatsheets/'
-alias morning='ruby ~/Sites/personal/utilities/mom/morning_routine.rb'
+alias cheat='subl ~/Sites/personal/cheatsheets/'
+alias lint="./node_modules/.bin/eslint"
+# alias morning='ruby ~/Sites/personal/utilities/mom/morning_routine.rb'
 
 alias y1='youtube-dl -f 140'
 alias y2='youtube-dl -f 17'
@@ -43,6 +44,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
 # Add Mysql library tools to path
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/mysql/lib
+
+export DISABLE_THINKING_SPHINX="true"
 
 # Highlight Git branch in prompt
 parse_git_branch() {

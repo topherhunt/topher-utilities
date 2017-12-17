@@ -1,6 +1,0 @@
-/* For URLs on domain: teuxdeux.com */
-
-/* Adjust column widths: make 30% wider than the other days */
-.column.calendar-column { width: 18.75%; }
-.column.calendar-column.present { width: 25%; }
-.todo-item.is-recurring .todo-text { padding-right: 0px; }
