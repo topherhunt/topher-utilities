@@ -1,0 +1,52 @@
+html, body {
+  -webkit-font-smoothing: auto;
+}
+
+.DocumentContainer.is-centerDocument .DocumentBreadcrumb {
+  padding: 5px 0 0 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.DocumentBreadcrumb-delimiter {
+  margin: 0 1px;
+}
+
+.is-desktop .Document-rootNode {
+  padding: 0px 0px;
+  margin-top: -20px;
+}
+
+.Document-bottomSpace {
+  min-height: 20px;
+}
+
+.u-use-pref-font,
+.is-smallFont .Node-bullet,
+.is-smallFont .Node-contentContainer {
+  font-family: 'Helvetica Neue', Arial, Sans-serif;
+  font-size: 15px;
+  color: #333;
+}
+
+.is-smallFont .node-line {
+  line-height: 17px;
+}
+
+.is-smallFont .Node-self.is-parent + .Node-children {
+  padding-top: 0px;
+  padding-bottom: 2px;
+}
+
+.Node-outer {
+  padding-top: 1px;
+}
+
+.FolderItem-header, .DocumentItem-header, .BookmarkItem-header {
+  padding: 2px 2px 2px 2px;
+}
+
+.DocumentTools {
+  top: -55px;
+  right: -5px;
+}

@@ -1,6 +1,15 @@
 # Topher's bash_profile
 # To install, create `~/.bash_profile` with the contents `source ~/path/to/bash_profile`
 
+alias b='tput bel; sleep 1; tput bel; sleep 1; tput bel'
+alias cheat='subl ~/Sites/personal/cheatsheets/'
+alias hexdocs='mix hex.docs open --offline'
+alias ssh-config='less ~/.ssh/config'
+
+alias throttle_200='throttle --up 100 --down 200 --rtt 1'
+alias throttle_800='throttle --up 800 --down 400 --rtt 1'
+alias throttle_stop='throttle --stop'
+
 # Git shortcuts
 alias ga='git add --all'
 alias gs='git status'
@@ -13,12 +22,13 @@ alias gb='git branch'
 alias rs='rails s'
 alias rc='rails c'
 alias be='bundle exec'
-alias rt='ruby -Itest' # mainly for Glassfrog
-alias webpack='./bin/webpack-dev-server'
 
-alias cheat='subl ~/Sites/personal/cheatsheets/'
-alias lint="./node_modules/.bin/eslint"
-# alias morning='ruby ~/Sites/personal/utilities/mom/morning_routine.rb'
+# for Glassfrog
+alias fs='./topher.ignore/start_server'
+alias rt='ruby -Itest' # mainly for Glassfrog
+# export PIVOTAL_TRACKER_TOKEN="5c97f86496f316a18779be248eb01cef"
+alias k='kubectl'
+alias kc='kubectl config'
 
 alias y1='youtube-dl -f 140'
 alias y2='youtube-dl -f 17'
@@ -45,6 +55,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Add Mysql library tools to path
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/mysql/lib
 
+export PATH="/usr/local/opt/qt@5.5/bin:$PATH" # orig: $(brew --prefix qt@5.5)
+export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
+
 export DISABLE_THINKING_SPHINX="true"
 
 # Highlight Git branch in prompt
@@ -64,4 +77,5 @@ source ~/Sites/personal/utilities/.git-autocomplete.bash
 source ~/Sites/personal/utilities/.ssh-autocomplete.bash
 
 # Hook in Kiex (Elixir version) scripts
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+# test -s "$HOME/.kiex/scripts/kiex" &&
+source "$HOME/.kiex/scripts/kiex"
