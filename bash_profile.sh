@@ -77,6 +77,8 @@ export PS1="\n» \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+alias smartping="sh ~/Sites/personal/utilities/smartping.sh"
+
 test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
 
 # Enable autocomplete for Git command / branches and SSH aliases
