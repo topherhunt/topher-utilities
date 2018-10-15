@@ -7,30 +7,26 @@ SEQUENCE = %{
   OK, let's do some yoga! 2
 
   # Seated breathing
-  Sit cross-legged with your back straight. 2
-  Close your eyes. Breathe in as deeply as you can. 4
-  Then breathe out as fully as you can. 5
-  Then in all the way again. 4
-  Then out all the way again. 5
-  In. 4
-  And out. 5
+  Sit cross-legged with your back straight. 1
+  Close your eyes. Breathe in as deeply as you can. 3
+  Then breathe out as fully as you can. 3
+  Then in all the way again. 3
+  Then out all the way again. 3
+  In. 3
+  And out. 3
 
   # Seated neck & arm stretch (each side x2)
-    Now stretch your fingertips along the floor to each side. 3
-  And gently tilt your head to the right. 15
+    Now stretch your fingertips along the floor to each side. 2
+  Gently tilt your head to the right. 15
   Now gently tilt your head to the left. 15
-    Now tilt your head to the right again. 15
+  Now tilt your head to the right again. 15
   Now tilt your head to the left again. 15
 
   # Seated twists (each side x2)
     Raise your arms straight up. Breathe in deeply. 3
-  Breathe out and twist your torso and shoulders to the right. 10
-    Then come back to center and breathe in. 2
-  Breathe out and twist your torso and shoulders to the left. 10
-    Then come back to center and breathe in. 2
-  Breathe out and twist your torso and shoulders to the right. 10
-    Then come back to center and breathe in. 2
-  Breathe out and twist your torso and shoulders to the left. 10
+  Breathe out and twist your torso and shoulders to the right. 12
+    Then come back to center, and breathe in. 1
+  Breathe out and twist your torso and shoulders to the left. 12
     Then come back to center. 2
 
   # Alphabet & back stretch
@@ -69,27 +65,26 @@ SEQUENCE = %{
   Good job, now come back to standing, and drop your arms. 3
 
   # Down dog / child's pose x5
-    Lower yourself into plank position. 3
+    Lower yourself into plank position. 2
     Ensure your hands are right under your shoulders. 1
     Pull your heels back and the back of your head forward. 1
   Now hinge back to down dog. 15
     Hinge forward to plank. 1
-    Put your knees to the floor. 1
   Then fold back into child's pose. 8
-    Now up to hands and knees, then plank. 1
-  Then pull back to downward facing dog. 15
-    Now forward to plank. 1
-  Knees to the ground, then back to child's pose. 5
-    Plank. 1
-  Down dog. 10
-    Plank. 1
-  Child's pose. 5
+    Now up to plank. 1
+  Then pull back to downward facing dog. 10
+    Forward to plank. 1
+  Down to child's pose. 6
     Plank. 1
   Down dog. 8
     Plank. 1
   Child's pose. 5
+    Plank. 1
+  Down dog. 7
+    Plank. 1
+  Child's pose. 4
   Up to plank. 1
-  Down dog. 6
+  Down dog. 5
   Now let's go faster. 1
     Plank. 1
   Child's pose. 2
@@ -128,41 +123,39 @@ SEQUENCE = %{
   Cow. 3
   Cat. 3
   Cow. 3
-  Cat. 3
-  Cow. 3
   Come back to straight back. 1
 
   # TODO: At some point I'll add a couple vinyasas in here, from my old routine. 3
 
   # Push-ups
   Get into position for forty push-ups. 10
-  First set of ten. 20
-  Rest for a few seconds. 5
-  Next set of ten. 20
-  Rest for a few seconds. 5
-  Third set of ten. 20
-  Rest for a few seconds. 5
-  Final set of ten. 20
-  Rest for a few seconds. 5
+  First set of ten. 22
+  Rest for a few seconds. 8
+  Next set of ten. 22
+  Rest for a few seconds. 8
+  Third set of ten. 22
+  Rest for a few seconds. 8
+  Final set of ten. 22
+  Rest for a few seconds. 8
   Nice job! 1
 
   # Standing arm rotations & stretches
     Stand on your mat in an open space, with your feet shoulder-distance apart. 3
-  Keeping your legs rooted, swing your torso, shoulders, and arms from side to side at your own pace. 40
+  Keeping your legs rooted, swing your torso, shoulders, and arms from side to side at your own pace. 30
     Now come back to stillness. 3
   Rotate your right arm backward in large but gentle circles. 10
     Now make the circles as large and straight as you can. 10
-    Come back to stillness. 2
+    Come back to stillness. 3
   Rotate your left arm backward in large but gentle circles. 10
     Now make the circles as large and straight as you can. 10
-    Come back to stillness. 2
+    Come back to stillness. 3
   Rotate your right arm forward in large but gentle circles. 10
     Now make the circles as large and straight as you can. 10
-    Come back to stillness. 2
+    Come back to stillness. 3
   Rotate your left arm forward in large but gentle circles. 10
     Now make the circles as large and straight as you can. 10
-    Come back to stillness. 2
-  Now reach your arms straight up and clasp your fingers, with your palms facing up. 3
+    Come back to stillness. 3
+  Now reach your arms straight up and clasp your fingers, with your palms facing up. 2
   Breathe in deeply. 1
   Now breathe out and side-bend to the left. 4
     Come back to center and breathe in. 1
@@ -175,16 +168,13 @@ SEQUENCE = %{
     Then slowly let go of your hands and come back to standing. 4
 
   # Squat stretches
-    Squat on your mat with your feet shoulder-width apart. 3
+    Squat on your mat with your feet shoulder-width apart. 2
+    Let your head and torso sag forward for a moment. 5
   Twist your torso to the left and reach your left arm straight up. 5
     Breathe deeply. 10
     Lower your left arm. 2
   Twist your torso to the right and reach your right arm straight up. 5
     Breathe deeply. 10
-    Lower your arm and come back to center. 1
-  Twist your torso to the left and reach your left arm straight up. 10
-    Lower your arm and come back to center. 1
-  Twist your torso to the right and reach your right arm straight up. 10
     Lower your arm and come back to center. 1
 
   # Hamstring stretch
@@ -211,7 +201,7 @@ SEQUENCE = %{
   Now gently push yourself back up to a straight back. 5
 
   # Leg / hip stretches lying on floor
-  Lie on your mat on your back. 3
+  Lie on your mat on your back. 4
   Pull your left knee to your chest. Stretch your right leg and foot out straight. 15
     Now gently let go of your left leg and lie with both legs straight. 5
   Pull your right knee to your chest. Stretch your left leg and foot out straight. 15

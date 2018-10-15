@@ -1,39 +1,43 @@
 /* For URLs on domain: workflowy.com */
+/* (I no longer use WorkFlowy) */
 
 /* Header: pare down to minimal width & height */
 #pageContainer { margin-top: 0; }
 #header {
-	padding-left: 5px;
-	min-width: 550px; }
+  padding-left: 5px;
+  min-width: 550px; }
 #logo { display: none; }
 .undo-button, .redo-button { display: none; }
 
 /* The action confirmation banner needs narrowing too */
-#message { max-width: 500px; }
+#message {
+  max-width: 500px;
+  padding: 0px;
+}
 #message .close { margin-left: -100px; }
 
 /* Page content area: reduce spacing, standardize font size, fix bullets */
 .page {
-	padding-left: 20px;
-	padding-right: 10px;
-	padding-top: 10px; }
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 10px; }
 .children {
-	margin-left: 5px;
-	padding-left: 5px;
-	font-size: 15px; }
+  margin-left: 5px;
+  padding-left: 5px;
+  font-size: 15px; }
 .selected .project > .name { /* Does this actually do anything? */
-	margin-left: -50px;
-	padding-left: 75px; }
+  margin-left: -50px;
+  padding-left: 75px; }
 .name > .content {
-	min-height: 17px; }
+  min-height: 17px; }
 .selected .project > .name > .content {
-	line-height: 18px; }
+  line-height: 18px; }
 .bullet { /* Does this actually do anything? */
-	left: 50px; }
+  left: 50px; }
 .selected > .children > .project .project > .name > .bullet {
-	margin-top: 3px; }
+  margin-top: 3px; }
 #controls { /* Does this actually do anything? */
-	left: 0px; }
+  left: 0px; }
 
 /* Reduce link size so they don't choke out other text */
 .contentLink { font-size: 90%; }

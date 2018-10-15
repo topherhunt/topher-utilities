@@ -23,6 +23,10 @@ alias rs='rails s'
 alias rc='rails c'
 alias be='bundle exec'
 
+# Phoenix shortcuts
+alias mt='echo "mix test" && mix test'
+alias mps='echo "mix phx.server" && mix phx.server'
+
 # for Glassfrog
 alias fs='./topher.ignore/start_server'
 alias rt='ruby -Itest' # mainly for Glassfrog
@@ -60,12 +64,15 @@ export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
 
 export DISABLE_THINKING_SPHINX="true"
 
+# For GlassFrog deployments / ticket tagging
+export PIVOTAL_TRACKER_TOKEN="bcf5faa0888da540d8b9b60dd47e8fc5"
+
 # Highlight Git branch in prompt
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 # Removed: "\u@\h"
-export PS1="» \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="\n» \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
