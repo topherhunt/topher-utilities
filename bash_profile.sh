@@ -5,7 +5,6 @@ alias ll='ls -la'
 alias b='tput bel; sleep 1; tput bel; sleep 1; tput bel'
 alias cheat='subl ~/Sites/personal/cheatsheets/'
 alias ssh-config='less ~/.ssh/config'
-alias smartping="sh ~/Sites/personal/utilities/smartping.sh"
 
 # alias throttle_200='throttle --up 100 --down 200 --rtt 1'
 # alias throttle_800='throttle --up 800 --down 400 --rtt 1'
@@ -19,22 +18,26 @@ alias gl='git log --pretty=format:"%h %ai (%an) | %s" --shortstat | ruby ~/Sites
 alias gd='git diff'
 alias gb='git branch'
 
+alias g='grep --line-buffered' # insane that OSX disables this flag by default
+
 # Rails shortcuts
 alias rs='rails s'
 alias rc='rails c'
 alias be='bundle exec'
+alias rt='ruby -Itest' # for H1 / GF
 
 # Phoenix shortcuts
 alias mt='echo "mix test" && mix test'
 alias mps='echo "mix phx.server" && mix phx.server'
 alias ph='echo "phantomjs --wd" && phantomjs --wd'
+alias chr='echo "chromedriver" && chromedriver'
 alias hexdocs='mix hex.docs offline'
 
-# for Glassfrog
-alias fs='./topher.ignore/start_server'
-alias rt='ruby -Itest' # mainly for Glassfrog
-alias k='kubectl'
-alias kc='kubectl config'
+alias j='bundle exec jekyll serve'
+
+# Set up asdf
+. /usr/local/opt/asdf/asdf.sh
+. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 # MySQL
 # I have MariaDB installed which you can start with `mysql.server start`
@@ -43,24 +46,24 @@ alias start_mysql='sudo /usr/local/mysql/support-files/mysql.server restart'
 
 # Add Git to PATH
 export PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH"
+
 # Add Mysql executables to PATH
 export PATH="/usr/local/mysql/bin:$PATH"
-# Add Postgres.app to PATH
-export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
-# Set up Heroku Toolbelt in PATH
-export PATH="/usr/local/heroku/bin:$PATH"
-# Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
+
 # Add Mysql library tools to path
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/mysql/lib
 
+# Add Postgres.app to PATH
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
+
+# Set up Heroku Toolbelt in PATH
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin"
+
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH" # orig: $(brew --prefix qt@5.5)
 export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
-
-export DISABLE_THINKING_SPHINX="true"
-
-# For GlassFrog deployments / ticket tagging
-export PIVOTAL_TRACKER_TOKEN="bcf5faa0888da540d8b9b60dd47e8fc5"
 
 # Highlight Git branch in prompt
 parse_git_branch() {
@@ -77,7 +80,3 @@ test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_i
 # Enable autocomplete for Git command / branches and SSH aliases
 source ~/Sites/personal/utilities/.git-autocomplete.bash
 source ~/Sites/personal/utilities/.ssh-autocomplete.bash
-
-# Hook in Kiex (Elixir version) scripts
-# test -s "$HOME/.kiex/scripts/kiex" &&
-source "$HOME/.kiex/scripts/kiex"

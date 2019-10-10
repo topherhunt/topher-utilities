@@ -1,0 +1,97 @@
+[
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1566733063464,
+		"name": "dynalist.io",
+		"sections": [
+			{
+				"code": "/* Sidebar: less padding */\n.FolderItem-header,\n.DocumentItem-header,\n.BookmarkItem-header {\n    padding: 2px 2px 2px 2px;\n}\n\n/* Sidebar: less padding for list entries */\n.pane-item-header {\n    margin-left: 1.25rem;\n}\n\n/* Top-right corner icons: hide */\n.is-desktop .DocumentTools { \n    top: -30px; right: 0px;\n}\n\n/* Whole page: use plain text rendering (slightly bolder) */\nhtml,\nbody {\n    -webkit-font-smoothing: auto;\n}\n\n/* Breadcrumbs: less padding & margin; smaller */\n.DocumentContainer.is-centerDocument .DocumentBreadcrumb {\n    padding: 5px 0 0 0;\n    margin: 0;\n    font-size: 14px;\n}\n\n.DocumentBreadcrumb { min-height: 20px; width: 100%; }\n\n.DocumentBreadcrumb-delimiter {\n    margin: 0 1px;\n}\n\n/* Document title: further up the page; less padding */\n.is-desktop .Document-rootNode {\n    padding: 0px 0px;\n    margin-top: 0px;\n}\n\n/* Item text: smaller, less line spacing, use Workflowy font */\n.u-use-pref-font,\n.is-smallFont .Node-bullet,\n.is-smallFont .Node-contentContainer {\n    font-family: 'Helvetica Neue', Arial, Sans-serif;\n    font-size: 15px;\n    color: #333;\n}\n.is-smallFont .node-line {\n    line-height: 17px;\n}\n.is-smallFont .Node-self.is-parent + .Node-children {\n    padding-top: 0px;\n    padding-bottom: 2px;\n}\n.Node-outer {\n    padding-top: 1px;\n}\n\n/* Make code snippets smaller */\nspan.node-inline-code {\n    font-size: 80% !important;\n    line-height: 15px !important;\n}\n\n/* Hide zoom icon for each item */\n.node-line.node-icon.mod-expand-collapse {\n    display: none !important;\n}\n\n/* Hide zoom icon on mobile view */\n.is-mobile .node-hover {\n    display: none !important;\n}\n.is-mobile .Node.is-currentRoot {\n    padding: 0px 20px 0px 20px;\n}\n\n/* Reduce each nesting's indent */\n.Node-children {\n    margin-left: 10px;\n    padding-left: 10px;\n}\n\n/* Bottom margin: smaller */\n.Document-bottomSpace {\n    min-height: 20px;\n}",
+				"domains": [
+					"dynalist.io"
+				]
+			}
+		],
+		"updateDate": 1567407223510,
+		"id": 1
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1566733131679,
+		"name": "duckduckgo.com",
+		"sections": [
+			{
+				"code": "#ads, .results--ads, .result--ad {\n\tdisplay: none;\n}",
+				"domains": [
+					"duckduckgo.com"
+				]
+			}
+		],
+		"updateDate": 1566733486604,
+		"id": 2
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1566733465150,
+		"name": "docs.google.com",
+		"sections": [
+			{
+				"code": "/* Hide useless search bar buttons */\n#printButton,\n#undoButton,\n#redoButton,\n#formatPainterButton,\n#outdentButton,\n#indentButton,\n#clearFormattingButton,\n#alignRightButton,\n#alignJustifyButton,\n#lineSpacingMenuButton,\n\n#lineSpacingSeparator,\n#clearFormattingSeparator,\n\n#t-strikethrough,\n#t-num-fmt-currency,\n#t-num-fmt-percent,\n#t-num-fmt-decimal-decrease,\n#t-num-fmt-decimal-increase,\n#t-print,\n#t-undo,\n#t-redo,\n#t-paintformat {\n    display: none;\n}\n\n.waffle-assistant-entry-label {\n    display: none !important;\n}\n\n.docs-gm .docs-sheet-tab-name {\n    font-weight: normal;\n}\n\n.docs-gm .docs-sheet-tab .docs-sheet-tab-dropdown {\n    display: none;\n}\n\n.docs-gm .docs-sheet-active-tab .docs-sheet-tab-dropdown {\n    display: inline-block;\n}\n\n.docs-sheet-comment-indicator-container {\n    display: none !important;\n}",
+				"domains": [
+					"docs.google.com"
+				]
+			}
+		],
+		"updateDate": 1566733476938,
+		"id": 3
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1566733628350,
+		"name": "mail.google.com",
+		"sections": [
+			{
+				"code": "/* Hide right-hand panes */\n.aeJ { padding-right: 10px; }\n.nH.bAw.nn { display: none; }\n",
+				"domains": [
+					"mail.google.com"
+				]
+			}
+		],
+		"updateDate": 1566733722962,
+		"id": 4
+	},
+	{
+		"enabled": true,
+		"updateUrl": null,
+		"md5Url": null,
+		"url": null,
+		"originalMd5": null,
+		"installDate": 1566733835164,
+		"name": "twist.com",
+		"sections": [
+			{
+				"code": "/* Threads list panel: spacing */\nheader.list_header section {\n    margin-left: 10px;\n}\n.center_column_button--wrapper p {\n    padding-left: 10px;\n}\n.center_col ul a.item .status_icons {\n    padding-top: 15px;\n}\n.center_col ul a.item.thread .border_wrapper {\n    padding: 9px 10px 9px 0;\n}\n\n/* Thread comments panel: spacing */\n.comments article.item,\n.search_results article.item {\n    margin-left: 0px;\n}\n\n.collapsed_comment_composer {\n    margin: 10px;\n}\n\n.comment_composer__wrapper {\n    margin: 10px;\n}\n\n.comment_composer {\n    padding: 0 10px;\n}\n\n.recipients {\n    padding-top: 10px;\n    padding-bottom: 0px;\n}\n\n.comment_composer .comment_composer__content .twist_editor {\n    padding-top: 0px;\n}\n\n.comment_composer .comment_composer__footer {\n    padding-top: 0;\n    padding-bottom: 10px;\n}",
+				"domains": [
+					"twist.com"
+				]
+			}
+		],
+		"updateDate": 1566733835164,
+		"id": 5
+	}
+]

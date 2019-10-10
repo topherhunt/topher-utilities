@@ -12,13 +12,14 @@
 # cfb9b18 2016-11-03 (Topher Hunt) | User#create: Handle validation errors  [2 20 8]
 #
 # Features:
-# - Tolerates blank values - e.g. merge commits where change stats aren't available
+# - Tolerates blank values (eg. merge commits where change stats aren't available)
 # - Tolerates multiple authors (e.g. when using Pivotal's `git pair` script)
+# - Tolerates accented chars in author names
 # - Treats STDIN as a stream - doesn't block until STDIN finishes loading
 # - Pretty colors - should be easy to customize & extend
 
 # [1:hash] [2:date] [time] [timezone] [3:author name] | [4:commit message]
-LINE1_REGEX = /(\w+) ([\d-]{10}) [\d:]{8} [\-\+]\d{4} (\([\w\s\.&,]+\)) \| ([^\n]+)/
+LINE1_REGEX = /(\w+) ([\d-]{10}) [\d:]{8} [\-\+]\d{4} (\([[[:alpha:]]\s\.&,]+\)) \| ([^\n]+)/
 # [1: # files], [3: lines inserted], [5: lines deleted]
 LINE2_REGEX = /(\d+) files? changed(, (\d+) insertions?...)?(, (\d+) deletions?...)?/
 

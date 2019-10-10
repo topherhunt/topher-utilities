@@ -1,1 +1,0 @@
-These are CSS style overrides for specific websites, meant to be installed in the Chrome `Stylish` plugin. Recently I've realized that it's powerful to be able to tweak a website's appearance, hide an annoying page section, etc.; this has become a core part of my toolkit, especially on Workflowy.
