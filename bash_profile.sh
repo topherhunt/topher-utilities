@@ -18,26 +18,35 @@ alias gl='git log --pretty=format:"%h %ai (%an) | %s" --shortstat | ruby ~/Sites
 alias gd='git diff'
 alias gb='git branch'
 
-alias g='grep --line-buffered' # insane that OSX disables this flag by default
+alias g='grep --line-buffered' # It's insane that OSX disables this flag by default
 
 # Rails shortcuts
 alias rs='rails s'
 alias rc='rails c'
 alias be='bundle exec'
 alias rt='ruby -Itest' # for H1 / GF
+export DISABLE_SPRING=true # I don't trust Spring.
 
 # Phoenix shortcuts
-alias mt='echo "mix test" && mix test'
-alias mps='echo "mix phx.server" && mix phx.server'
+alias mt='mix test'
+alias mps='mix phx.server'
 alias ph='echo "phantomjs --wd" && phantomjs --wd'
 alias chr='echo "chromedriver" && chromedriver'
 alias hexdocs='mix hex.docs offline'
 
 alias j='bundle exec jekyll serve'
 
-# Set up asdf
+alias k='kubectl' # for Glassfrog
+
+# Add asdf to PATH etc.
 . /usr/local/opt/asdf/asdf.sh
 . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+# Silence Mac OSX warning about updating to zsh
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Retain iex history (thanks to https://stackoverflow.com/a/45405071/1729692)
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 # MySQL
 # I have MariaDB installed which you can start with `mysql.server start`
@@ -47,7 +56,7 @@ alias start_mysql='sudo /usr/local/mysql/support-files/mysql.server restart'
 # Add Git to PATH
 export PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH"
 
-# Add Mysql executables to PATH
+# Mysql setup
 export PATH="/usr/local/mysql/bin:$PATH"
 
 # Add Mysql library tools to path
@@ -62,8 +71,15 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
 
+# QT (still relevant?)
 export PATH="/usr/local/opt/qt@5.5/bin:$PATH" # orig: $(brew --prefix qt@5.5)
+
+# Elasticsearch (still relevant?)
 export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
+
+# For Android app development (from Meteor.js setup guide)
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
 # Highlight Git branch in prompt
 parse_git_branch() {

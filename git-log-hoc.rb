@@ -19,7 +19,7 @@
 # - Pretty colors - should be easy to customize & extend
 
 # [1:hash] [2:date] [time] [timezone] [3:author name] | [4:commit message]
-LINE1_REGEX = /(\w+) ([\d-]{10}) [\d:]{8} [\-\+]\d{4} (\([[[:alpha:]]\s\.&,]+\)) \| ([^\n]+)/
+LINE1_REGEX = /(\w+) ([\d-]{10}) [\d:]{8} [\-\+]\d{4} (\([[:alpha:]\d\s\.&,]+\)) \| ([^\n]+)/
 # [1: # files], [3: lines inserted], [5: lines deleted]
 LINE2_REGEX = /(\d+) files? changed(, (\d+) insertions?...)?(, (\d+) deletions?...)?/
 

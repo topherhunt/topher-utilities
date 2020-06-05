@@ -1,13 +1,17 @@
 # PO file machine translation script
 # See https://cloud.google.com/translate/docs/quickstart-v3
 #
+# WARNING: The script modifies the po file in-place. Use Git! Use backups! Save the animals!
+#
 # Usage:
 # - Make sure you have a Google Cloud project set up
 # - Make sure Google Cloud SDK is installed & configured) (to test: `gcloud config list`)
 # - Make sure that CREDENTIALS_PATH points to your default project's credentials json file
-# - cd to the directory containing the .po file
-# - `ruby ~/path/to/machine_translate.rb my_po_file.po en nl`
-# - The script will modify the po file in-place. Use Git! Have backups! Save the animals!
+# - cd to the directory containing the .po file (eg. PROJECT/priv/gettext/nl/LC_MESSAGES/)
+# - `ruby ~/Sites/personal/utilities/machine_translate.rb my_po_file.po en nl`
+# - Manually review each translation for malformed syntax. In particular sanity-check any
+#   instances of `% {`, `\ `, `> ,`, `> .`, `&quot;`, any other `&` html entities.
+# - Also check for dropped leading whitespaces.
 #
 # Possible improvements:
 # - Google Cloud Translate messes up each injection. But I notice in leaves html tags alone. Maybe the injections can be rewritten as html tags, then reverted after translation? In the meantime you need to manually check over and fix each injection (search for "%{" in the msgid and double-check the corresponding msgstr).
@@ -24,9 +28,9 @@ require 'json'
 #
 
 CREDENTIALS_PATH = ENV["GOOGLE_APPLICATION_CREDENTIALS"] || "~/.ssh/google_application_credentials.json"
-@po_filename = ARGV[0]
-@source_locale = ARGV[1]
-@target_locale = ARGV[2]
+@po_filename = ARGV[0] || raise("Usage: ruby path/to/machine_translate.rb file.po FROM_LOCALE TO_LOCALE")
+@source_locale = ARGV[1] || raise("Usage: ruby path/to/machine_translate.rb file.po FROM_LOCALE TO_LOCALE")
+@target_locale = ARGV[2] || raise("Usage: ruby path/to/machine_translate.rb file.po FROM_LOCALE TO_LOCALE")
 
 puts "Getting gcloud project id..."
 match = `gcloud config list`.match(/project = ([\w\-]+)/)
@@ -57,13 +61,18 @@ def main
     elsif match = line.match(/\Amsgid_plural "(.*)"\z/)
       last_msgid_plural = match[1]
       buffer << line
-    elsif line == "msgstr \"\"" || line == "msgstr[0] \"\""
+    elsif line == "msgstr \"\""
       translation = translate(last_msgid_singular)
       line = "msgstr \"#{translation}\""
       buffer << line
-    elsif line == "msgstr \"\"" || line == "msgstr[1] \"\""
+    # There's probably a much more elegant way to handle these singular/plural cases
+    elsif line == "msgstr[0] \"\""
+      translation = translate(last_msgid_singular)
+      line = "msgstr[0] \"#{translation}\""
+      buffer << line
+    elsif line == "msgstr[1] \"\""
       translation = translate(last_msgid_plural)
-      line = "msgstr \"#{translation}\""
+      line = "msgstr[1] \"#{translation}\""
       buffer << line
     elsif line.match(/msgstr(\[\d\])? ".+"/)
       buffer << line
@@ -79,7 +88,7 @@ def main
 
   puts "\nDone! Notes:\n"
   puts "  * You just translated #{@chars_translated} chars using Google Cloud Translation. See https://cloud.google.com/translate/pricing."
-  puts "  * Manually review all these translations, especially any injected vars."
+  puts "  * Manually review all these translations, in particular any occurrences of \"% {\" (delete the intervening space) or \"\ \" (orphaned backslashes can probably be deleted)."
 end
 
 def translate(string)
