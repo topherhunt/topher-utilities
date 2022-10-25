@@ -13,9 +13,14 @@ My latest settings:
     "node_modules/",
     "deps/",
     "_files*",
+    "_site/",
+    "_debug/",
     "tmp/",
     "test/reports/",
-    "public/packs/"
+    "public/packs/",
+    "scratch.ignore/",
+    "export/",
+    "public/uploads/"
   ],
   "color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
   "detect_indentation": false,
@@ -25,7 +30,8 @@ My latest settings:
     "*.xmlz",
     ".DS_Store",
     "*.map",
-    ".keep"
+    ".keep",
+    ".byebug_history"
   ],
   "folder_exclude_patterns":
   [
@@ -45,11 +51,13 @@ My latest settings:
   [
     90
   ],
+  "save_on_focus_lost": false,
   "show_definitions": false,
   "tab_size": 2,
   "theme": "Adaptive.sublime-theme",
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": true,
+  "update_check": false,
   "word_wrap": true
 }
 ```
