@@ -23,8 +23,7 @@ alias g='grep --line-buffered' # It's insane that OSX disables this flag by defa
 # Rails shortcuts
 alias rs='rails s'
 alias rc='rails c'
-alias be='bundle exec'
-alias rt='ruby -Itest' # for H1 / GF
+alias rt='rails test'
 export DISABLE_SPRING=true # I don't trust Spring.
 
 # Phoenix shortcuts
@@ -36,11 +35,12 @@ alias hexdocs='mix hex.docs offline'
 
 alias j='bundle exec jekyll serve'
 
-alias k='kubectl' # for Glassfrog
+# WVTest Serverless AWS lambda for Puppeteer PDF generation
+alias serverless='node_modules/serverless/bin/serverless.js'
 
-# Add asdf to PATH etc.
-. /usr/local/opt/asdf/asdf.sh
-. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+export EDITOR='subl --wait'
+
+export BUNDLER_EDITOR=subl
 
 # Silence Mac OSX warning about updating to zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -62,8 +62,8 @@ export PATH="/usr/local/mysql/bin:$PATH"
 # Add Mysql library tools to path
 export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/mysql/lib
 
-# Add Postgres.app to PATH
-export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
+# Add Homebrew postgresql to path
+export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 
 # Set up Heroku Toolbelt in PATH
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -76,6 +76,9 @@ export PATH="/usr/local/opt/qt@5.5/bin:$PATH" # orig: $(brew --prefix qt@5.5)
 
 # Elasticsearch (still relevant?)
 export PATH="/usr/local/opt/elasticsearch@5.6/bin:$PATH"
+
+# Add homebrew Erlang to PATH
+export PATH="/usr/local/opt/erlang@21/bin:$PATH"
 
 # For Android app development (from Meteor.js setup guide)
 export ANDROID_HOME="$HOME/Library/Android/sdk"
@@ -96,3 +99,7 @@ test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_i
 # Enable autocomplete for Git command / branches and SSH aliases
 source ~/Sites/personal/utilities/.git-autocomplete.bash
 source ~/Sites/personal/utilities/.ssh-autocomplete.bash
+
+# Add asdf to PATH etc. This must be as late in bash_profile as possible.
+. /usr/local/opt/asdf/asdf.sh
+. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash

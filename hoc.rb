@@ -1,46 +1,51 @@
-FILTERS=["Topher"]
+# Usage:
+# - cd to your repo folder
+# - ensure you're on the branch that you want to evaluate (usually master)
+# - ruby ~/Sites/personal/utilities/hoc.rb "Topher" 2020-12
 
-def run(cmd)
-  puts "CMD: #{cmd}"
-  `#{cmd}`.split("\n")
+# References:
+# - http://dymitruk.com/blog/2012/07/18/filtering-by-author-name/
+
+# List commits by this author, in this daterange, in compact format:
+# git log --pretty=format:"%h %ai (%an) | %s" --shortstat --author="Topher" --since=2020-10-01 --until=2020-11-01
+
+require 'date'
+
+def abort(message)
+  puts message
+  exit
 end
 
-list_commits_cmd = "git log --pretty=format:\"%h %ai (%an) | %s\""
-FILTERS.each { |f| list_commits_cmd += " | grep \"#{f}\"" }
-all_commit_lines = run(list_commits_cmd)
-all_commits = all_commit_lines.map { |l| l.match(/\A(\w+) /).captures.first }
-puts "All commits: #{all_commits}"
+author = ARGV[0]
+month = ARGV[1]
 
+USAGE_INSTRUCTIONS = %s[Usage: \n  ruby ~/Sites/personal/utilities/hoc.rb "Topher" 2020-12]
+abort(USAGE_INSTRUCTIONS) if author.to_s == ""
+abort(USAGE_INSTRUCTIONS) unless month =~ /^\d{4}-\d\d$/
 
+sdate = Date.parse("#{month}-01")
+edate = sdate.next_month # exclusive this date itself
+flags = "--shortstat --author=\"#{author}\" --since=#{sdate} --until=#{edate}"
 
-`git log 828ada754^1..828ada754 --shortstat`
+puts "Command:       git log --pretty=tformat:\"\" #{flags}"
+puts "Full details:  git log --pretty=format:\"%h %ai (%an) | %s\" #{flags}"
+puts
 
+hoc = 0
 
-
-# The hoc gem version:
-# (I can cobble this command together pretty easily and modify it to specify
-# starting & ending commits)
-
-def hits
-  version = `git --version`.split(/ /)[2]
-  raise "git version #{version} is too old, upgrade it to 2.0+" unless
-    Gem::Version.new(version) >= Gem::Version.new('2.0')
-  cmd = [
-    "cd #{@dir} && git",
-    # 'log 461c3dbbd..HEAD' to provide a starting commit
-    'log 461c3dbbd..HEAD', '--pretty=tformat:', '--numstat',
-    '--ignore-space-change', '--ignore-all-space',
-    '--ignore-submodules', '--no-color',
-    '--find-copies-harder', '-M', '--diff-filter=ACDM',
-    "'--author=#{@author}'", '--', '.',
-    @exclude.map { |e| "':(exclude,glob)#{e}'" }.join(' ')
-  ].join(' ')
-  [
-    Hits.new(
-      Time.now,
-      `#{cmd}`.split(/\n/).delete_if(&:empty?).map do |t|
-        t.split(/\t/).take(2).map(&:to_i).inject(:+)
-      end.inject(:+) || 0
-    )
-  ]
+`git log --pretty=tformat:\"\" #{flags}`
+.split("\n")
+.reject { |l| l.strip == "" }
+.each do |line|
+  if line =~ /^\s*(\d+) files? changed, ((\d+) [^\s\d]+, )?(\d+) [^\s\d]+$/
+    files = $1.to_i
+    ins = $3.to_i
+    del = $4.to_i
+    hoc += files + ins + del
+    # puts " * #{files} files changed, #{ins} insertions, #{del} deletions" # for debugging
+  else
+    raise "unrecognized line format: \n#{line.inspect}"
+  end
 end
+
+puts "Author: #{author.inspect}, month: #{month}, total HOC: #{hoc}"

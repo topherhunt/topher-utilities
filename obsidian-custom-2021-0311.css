@@ -1,0 +1,142 @@
+/* Custom CSS to make Obsidian's edit mode more wysiwyg
+   Thanks to https://www.reddit.com/r/ObsidianMD/comments/kp0z0v/date_estimate_for_wysiwyg/
+ */
+
+/***********************
+ * Basic layout
+ ***********************/
+
+/* Less left & right margins */
+.markdown-source-view { padding: 0em 0.1em !important; }
+.CodeMirror-sizer { border-right-width: 10px !important; }
+
+/* Document text: make it smaller, darker, easier to read, better font */
+.cm-s-obsidian {
+  font-family: 'Helvetica Neue';
+  font-size: 16px;
+  line-height: 1.15em !important;
+  color: rgb(0, 0, 0);
+}
+
+/* Bulleted lists: slight padding below each item */
+.cm-s-obsidian .HyperMD-list-line {
+  padding-bottom: 0.1em;
+}
+
+/* Fold/unfold triangle: adjust position; darker on hover */
+.CodeMirror-gutter-elt { top: 0.25em; left: 0.25em !important; }
+.CodeMirror-gutter-elt:hover .CodeMirror-guttermarker-subtle { color: #666; }
+
+/***********************
+ * Sidebars & chrome
+ ***********************/
+
+.view-header { height: 28px; }
+.view-header-icon { padding: 2px; margin-left: 5px; }
+.view-header-title { line-height: 26px; }
+.view-actions { padding: 0px; }
+
+/* Settings window: less padding */
+.modal.mod-settings {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+/* Don't animate sidebars, it's too jaggly. */
+.workspace-split.mod-left-split, .workspace-split.mod-right-split {
+  transition: none;
+}
+
+/* Sidebar pane header icons: less padding, smaller */
+.nav-header { padding: 2px; }
+.nav-action-button { margin: 2px 2px 0px 2px; padding: 3px 6px 0px 6px; }
+.nav-action-button svg { height: 15px; }
+
+/* Starred list: less padding */
+.nav-file-title { padding: 0 5px 0 10px; }
+.nav-file-icon { top: 4px; }
+
+/* Backlinks: smaller font, more compact spacing, darker text */
+.backlink-pane { font-size: 14px; padding: 0px; }
+.backlink-pane .search-result-container { margin-left: 2px; }
+.search-result.is-collapsed { margin-bottom: 4px; }
+.search-result-file-title {
+  font-size: 12px;
+  line-height: 1.2em;
+  font-weight: normal;
+  color: #444;
+}
+
+/* Backlink filenames: overlap the # references counter */
+.backlink-pane .tree-item-self { position: relative; }
+.backlink-pane .tree-item-flair-outer { position: absolute; top: 0px; right: -3px; }
+.backlink-pane .search-result .tree-item-flair-outer { top: 2px; }
+
+/* Backlink match snippets: more compact spacing, smaller font */
+.search-result-file-match {
+  font-size: 12px;
+  line-height: 1.2em;
+  padding: 2px;
+  margin: 0 0 0 5px !important;
+  width: calc(100% - 8px);
+}
+.search-result-file-match:after { display: none; }
+
+/***********************
+ * Make formatting more WYSIWYG
+ ***********************/
+
+/* Bullet points: replace with a bullet. (∙ = small bullet, • = large bullet) */
+span.cm-formatting-list-ul { visibility: hidden !important; }
+span.cm-formatting-list-ul:after {
+  content: '• ';
+  margin-left: -11px;
+  color: #000;
+  visibility: visible !important;
+}
+
+/* Hide the status bar entirely for now */
+.status-bar { display: none; }
+
+/* Hide the right sidebar entirely (Cmd + Shift + / to show it) */
+.workspace-ribbon.side-dock-ribbon.mod-right.is-collapsed { display: none; }
+.workspace-split.mod-horizontal.mod-right-split.is-collapsed { display: none; }
+
+/* Divider lines (---) */
+div:not(.CodeMirror-activeline) > .CodeMirror-line .cm-hr {
+  display: inline-block;
+  height: 13px;
+  width: 100%;
+  color: #555;
+  border-bottom: 1px solid #777;
+}
+
+/* Italics & bold markup: make it faded & slightly smaller */
+.cm-formatting-em, .cm-formatting-strong {
+  color: #bbb;
+  font-size: 90%;
+}
+
+/* Header markup: make it faded */
+.cm-formatting-header {
+  color: #bbb;
+}
+
+/* Link text is slightly smaller to save space */
+.cm-url {
+  font-size: 90%;
+}
+
+/* Task checkboxes are monospace to prevent jiggle. */
+span.cm-formatting-task {
+  font-family: monospace;
+}
+
+/* Code blocks */
+.cm-hmd-codeblock, .cm-s-obsidian span.cm-inline-code {
+  font-family: monospace;
+  font-size: 90%;
+  line-height: 1em;
+}
