@@ -1,0 +1,136 @@
+/* Last updated: 2022-11-02 */
+
+/* Custom CSS to make Obsidian's edit mode more wysiwyg
+   Thanks to https://www.reddit.com/r/ObsidianMD/comments/kp0z0v/date_estimate_for_wysiwyg/
+ */
+
+/***********************
+ * Basic layout
+ ***********************/
+
+/* Document text: make it smaller, darker, easier to read, better font */
+.markdown-source-view.mod-cm6 .cm-scroller {
+  font-family: 'Helvetica Neue' !important;
+  font-size: 15px;
+  color: #000000;
+  line-height: 1.2em;
+}
+.theme-dark .cm-s-obsidian { color: #eeeeee; }
+
+.markdown-source-view.mod-cm6 .cm-scroller {
+  padding: 5px;
+  padding-left: 20px;
+}
+/*.markdown-source-view.mod-cm6.is-folding .cm-contentContainer { padding-left: 0px; }*/
+
+/*.theme-dark { --text-selection: #003380; }*/
+
+/***********************
+ * Sidebars & chrome
+ ***********************/
+
+/* Left-hand icons ribbon: narrower */
+.workspace-ribbon { flex: 0 0 30px; padding: 5px 0; }
+
+/* Settings window: less padding */
+.horizontal-tab-content, .vertical-tab-content { padding: 20px; }
+
+/* Left sidebar: hardcode width. The drawback is, you can't manually adjust this. */
+.workspace-split.mod-horizontal.mod-left-split { width: 150px !important; }
+
+/* Sidebar pane header icons: less padding, smaller */
+.nav-header { padding: 2px 0px 5px; }
+.nav-action-button { margin: 0px; padding: 2px 3px 0px 3px; }
+.nav-action-button svg { height: 15px; }
+
+/* Starred files list: less padding */
+/*.nav-file-title { padding: 0 5px 0 10px; color: #333; font-size: 13px; }
+.nav-file-icon { top: 4px; }
+.nav-file-title-content { padding: 0px; }
+.theme-dark .nav-file-title { color: #999; }*/
+
+/* Backlinks: smaller font, more compact spacing, darker text */
+.backlink-pane { font-size: 14px; padding: 0px; }
+.backlink-pane .search-result-container { margin-left: 2px; }
+.search-result.is-collapsed { margin-bottom: 4px; }
+.search-result-file-title {
+  font-size: 12px;
+  line-height: 1.2em;
+  font-weight: normal;
+  color: #444;
+}
+.theme-dark .search-result-file-title { color: #888; }
+
+/* Backlink filenames: overlap the # references counter */
+.backlink-pane .tree-item-self { position: relative; line-height: 1.2em; }
+.backlink-pane .tree-item-flair-outer { position: absolute; top: 0px; right: 5px; }
+.backlink-pane .search-result .tree-item-flair-outer { top: 5px; background: #f6f6f6; }
+
+/* Backlinks at bottom of document: fix spacing */
+.CodeMirror-lines > .workspace-leaf { margin-top: 100px !important; padding-right: 10px; }
+
+/* Outline pane */
+.outline .tree-item-self {
+  padding-left: 5px;
+  padding-bottom: 0.3em;
+  line-height: 1.2em;
+  font-size: 12px;
+}
+/*.outline .tree-item-children { margin-left: 10px; }*/
+/*.workspace-leaf-content .view-content { padding: 5px 5px 5px 10px; }*/
+
+/* Folder view pane */
+.nav-files-container {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.nav-file-title, .nav-folder-title {
+  /*font-size: 12px;*/
+  line-height: 16px;
+  padding-left: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.nav-folder-collapse-indicator { margin-left: -10px; width: 12px; }
+.nav-folder.mod-root > .nav-file-title, .nav-folder.mod-root > .nav-folder-title { display: none; }
+
+/* Hide the status bar entirely for now */
+/*.status-bar { display: none; }*/
+
+/* Move fold/unfold icon back to top of its text block */
+.markdown-source-view.mod-cm6 .cm-gutterElement { align-items: start; padding-top: 0.45em; }
+
+
+
+/***********************
+ * Text formatting
+ ***********************/
+
+/* Italics & bold markup: make it faded & slightly smaller */
+.cm-formatting-em, .cm-formatting-strong { color: #bbb; font-size: 90%; }
+.theme-dark .cm-formatting-em, .cm-formatting-strong { color: #888; }
+
+/* Link text is slightly smaller to save space */
+.cm-url { font-size: 80%; }
+
+/* Code blocks */
+.cm-hmd-codeblock, .cm-s-obsidian span.cm-inline-code { color: #009; font-weight: bold; }
+.theme-dark .cm-hmd-codeblock, .theme-dark .cm-s-obsidian span.cm-inline-code { color: #acd; }
+
+/* Make folded sections easier to spot */
+.cm-foldPlaceholder { font-weight: bold; color: #7bf !important; }
+
+/* ZOOM plugin: breadcrumbs should omit the "current" node, it's redundant. */
+.zoom-plugin-header .zoom-plugin-title:last-child { display: none; }
+
+
+
+/******************
+ * Preview view
+ ******************/
+
+.markdown-preview-view {
+  padding: 5px 20px;
+  font-size: 90%;
+}
