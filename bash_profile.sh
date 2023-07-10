@@ -3,7 +3,7 @@
 
 alias ll='ls -la'
 alias b='tput bel; sleep 1; tput bel; sleep 1; tput bel'
-alias cheat='subl ~/Sites/personal/cheatsheets/'
+alias cheat='code ~/Sites/personal/cheatsheets/'
 alias ssh-config='less ~/.ssh/config'
 
 # alias throttle_200='throttle --up 100 --down 200 --rtt 1'
