@@ -1,0 +1,21 @@
+[core]
+	sshCommand = ssh -i ~/.ssh/id_personal
+	excludesFile = ~/.gitignore
+[alias]
+	co = checkout
+[user]
+	name = Topher Hunt
+	email = topherhunt@digitalonboarding.com
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[color]
+  ui = true
+[color "status"]
+	changed = green
+	untracked = cyan
+	added = yellow
+[color "diff"]
+	meta = yellow
