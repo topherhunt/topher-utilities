@@ -1,0 +1,167 @@
+[
+  {
+    "settings": {
+      "openEditInWindow": true,
+      "openEditInWindow.popup": false,
+      "windowPosition": {},
+      "show-badge": true,
+      "disableAll": false,
+      "exposeIframes": false,
+      "exposeStyleName": false,
+      "newStyleAsUsercss": false,
+      "styleViaXhr": false,
+      "patchCsp": false,
+      "urlInstaller": true,
+      "config.autosave": true,
+      "schemeSwitcher.enabled": "system",
+      "schemeSwitcher.nightStart": "18:00",
+      "schemeSwitcher.nightEnd": "06:00",
+      "popup.breadcrumbs": true,
+      "popup.breadcrumbs.usePath": false,
+      "popup.enabledFirst": true,
+      "popup.stylesFirst": true,
+      "popup.autoResort": false,
+      "popup.borders": false,
+      "popup.findSort": "u",
+      "manage.onlyEnabled": false,
+      "manage.onlyLocal": false,
+      "manage.onlyUsercss": false,
+      "manage.onlyEnabled.invert": false,
+      "manage.onlyLocal.invert": false,
+      "manage.onlyUsercss.invert": false,
+      "manage.actions.expanded": true,
+      "manage.backup.expanded": true,
+      "manage.filters.expanded": true,
+      "manage.minColumnWidth": 750,
+      "manage.newUI": true,
+      "manage.newUI.favicons": false,
+      "manage.newUI.faviconsGray": true,
+      "manage.newUI.targets": 3,
+      "manage.newUI.sort": "title,asc",
+      "editor.options": {},
+      "editor.toc.expanded": true,
+      "editor.options.expanded": true,
+      "editor.lint.expanded": true,
+      "editor.publish.expanded": true,
+      "editor.lineWrapping": true,
+      "editor.smartIndent": true,
+      "editor.indentWithTabs": false,
+      "editor.tabSize": 4,
+      "editor.keyMap": "default",
+      "editor.theme": "default",
+      "editor.beautify": {
+        "end_with_newline": false,
+        "indent_conditional": true,
+        "newline_after_open_brace": true,
+        "newline_before_close_brace": true,
+        "newline_before_open_brace": false,
+        "newline_between_properties": true,
+        "newline_between_rules": false,
+        "preserve_newlines": true,
+        "selector_separator_newline": true
+      },
+      "editor.beautify.hotkey": "",
+      "editor.lintDelay": 300,
+      "editor.linter": "csslint",
+      "editor.lintReportDelay": 500,
+      "editor.matchHighlight": "token",
+      "editor.autoCloseBrackets": true,
+      "editor.autocompleteOnTyping": false,
+      "editor.contextDelete": true,
+      "editor.selectByTokens": true,
+      "editor.arrowKeysTraverse": true,
+      "editor.appliesToLineWidget": true,
+      "editor.autosaveDraft": 10,
+      "editor.livePreview": true,
+      "editor.colorpicker": true,
+      "editor.colorpicker.hexUppercase": false,
+      "editor.colorpicker.hotkey": "",
+      "editor.colorpicker.color": "#A7B6C2",
+      "editor.colorpicker.maxHeight": 300,
+      "hotkey._execute_browser_action": "",
+      "hotkey.openManage": "",
+      "hotkey.styleDisableAll": "",
+      "sync.enabled": "none",
+      "iconset": 0,
+      "badgeDisabled": "#8B0000",
+      "badgeNormal": "#006666",
+      "headerWidth.edit": 280,
+      "headerWidth.install": 280,
+      "headerWidth.manage": 280,
+      "popupWidth": 246,
+      "updateInterval": 24
+    },
+    "order": {
+      "main": [],
+      "prio": []
+    }
+  },
+  {
+    "enabled": true,
+    "installDate": 1566733063464,
+    "name": "dynalist.io",
+    "sections": [
+      {
+        "code": "/* Sidebar: less padding */\n.FolderItem-header,\n.DocumentItem-header,\n.BookmarkItem-header {\n    padding: 2px 2px 2px 2px;\n}\n\n/* Sidebar: less padding for list entries */\n.pane-item-header {\n    margin-left: 1.25rem;\n}\n\n/* Top-right corner icons: hide */\n.is-desktop .DocumentTools { \n    top: -30px; right: 0px;\n}\n\n/* Whole page: use plain text rendering (slightly bolder) */\nhtml,\nbody {\n    -webkit-font-smoothing: auto;\n}\n\n/* Breadcrumbs: less padding & margin; smaller */\n.DocumentContainer.is-centerDocument .DocumentBreadcrumb {\n    padding: 5px 0 0 0;\n    margin: 0;\n    font-size: 14px;\n}\n\n.DocumentBreadcrumb { min-height: 20px; width: 100%; }\n\n.DocumentBreadcrumb-delimiter {\n    margin: 0 1px;\n}\n\n/* Document title: further up the page; less padding */\n.is-desktop .Document-rootNode {\n    padding: 0px 0px;\n    margin-top: 0px;\n}\n\n/* Item text: smaller, less line spacing, use Workflowy font */\n.u-use-pref-font,\n.is-smallFont .Node-bullet,\n.is-smallFont .Node-contentContainer {\n    font-family: 'Helvetica Neue', Arial, Sans-serif;\n    font-size: 15px;\n    color: #333;\n}\n.is-smallFont .node-line {\n    line-height: 17px;\n}\n.is-smallFont .Node-self.is-parent + .Node-children {\n    padding-top: 0px;\n    padding-bottom: 2px;\n}\n.Node-outer {\n    padding-top: 1px;\n}\n\n/* Make code snippets smaller */\nspan.node-inline-code {\n    font-size: 80% !important;\n    line-height: 15px !important;\n}\n\n/* Hide zoom icon for each item */\n.node-line.node-icon.mod-expand-collapse {\n    display: none !important;\n}\n\n/* Hide zoom icon on mobile view */\n.is-mobile .node-hover {\n    display: none !important;\n}\n.is-mobile .Node.is-currentRoot {\n    padding: 0px 20px 0px 20px;\n}\n\n/* Reduce each nesting's indent */\n.Node-children {\n    margin-left: 10px;\n    padding-left: 10px;\n}\n\n/* Bottom margin: smaller */\n.Document-bottomSpace {\n    min-height: 20px;\n}",
+        "domains": [
+          "dynalist.io"
+        ]
+      }
+    ],
+    "updateDate": 1567407223510,
+    "id": 1,
+    "_id": "691335ff-ac83-41c7-892a-c1c1d451d3f1",
+    "_rev": 1668140845889
+  },
+  {
+    "enabled": true,
+    "installDate": 1566733131679,
+    "name": "duckduckgo.com",
+    "sections": [
+      {
+        "code": "#ads, .results--ads, .result--ad {\n\tdisplay: none;\n}",
+        "domains": [
+          "duckduckgo.com"
+        ]
+      }
+    ],
+    "updateDate": 1566733486604,
+    "id": 2,
+    "_id": "8e81a863-1a39-426b-b70c-65bd8d710691",
+    "_rev": 1668140845890
+  },
+  {
+    "enabled": true,
+    "installDate": 1566733465150,
+    "name": "docs.google.com",
+    "sections": [
+      {
+        "code": "/* Hide useless search bar buttons */\n#printButton,\n#undoButton,\n#redoButton,\n#formatPainterButton,\n#outdentButton,\n#indentButton,\n#clearFormattingButton,\n#alignRightButton,\n#alignJustifyButton,\n#lineSpacingMenuButton,\n\n#lineSpacingSeparator,\n#clearFormattingSeparator,\n\n#t-strikethrough,\n#t-num-fmt-currency,\n#t-num-fmt-percent,\n#t-num-fmt-decimal-decrease,\n#t-num-fmt-decimal-increase,\n#t-print,\n#t-undo,\n#t-redo,\n#t-paintformat {\n    display: none;\n}\n\n.waffle-assistant-entry-label {\n    display: none !important;\n}\n\n.docs-gm .docs-sheet-tab-name {\n    font-weight: normal;\n}\n\n.docs-gm .docs-sheet-tab .docs-sheet-tab-dropdown {\n    display: none;\n}\n\n.docs-gm .docs-sheet-active-tab .docs-sheet-tab-dropdown {\n    display: inline-block;\n}\n\n.docs-sheet-comment-indicator-container {\n    display: none !important;\n}",
+        "domains": [
+          "docs.google.com"
+        ]
+      }
+    ],
+    "updateDate": 1566733476938,
+    "id": 3,
+    "_id": "14090756-79b7-4d8c-81f3-7088b8fd8639",
+    "_rev": 1668140845890
+  },
+  {
+    "enabled": true,
+    "installDate": 1566733628350,
+    "name": "mail.google.com",
+    "sections": [
+      {
+        "code": "/* Hide right-hand panes */\n.aeJ { padding-right: 10px; }\n.nH.bAw.nn { display: none; }\n",
+        "domains": [
+          "mail.google.com"
+        ]
+      }
+    ],
+    "updateDate": 1566733722962,
+    "id": 4,
+    "_id": "bc24c44d-aaa5-4f55-b2de-5c81b3723035",
+    "_rev": 1668140845890
+  }
+]
