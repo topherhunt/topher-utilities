@@ -1,0 +1,40 @@
+# Topher's ZSH profile (for DO work only)
+
+alias ll='ls -la'
+alias cheat='code ~/Sites/personal/cheatsheets/'
+alias g='grep --line-buffered' # It's insane that OSX disables this flag by default
+
+alias start-gondor="INSIGHTS_CACHE_TTL=10 elixir --name web@127.0.0.1 -S mix phx.server"
+alias start-worker="WORKER=1 iex --name worker@127.0.0.1 -S mix"
+
+# Git shortcuts
+alias ga='git add --all'
+alias gs='git status'
+alias gc='git commit'
+alias gl='git log --pretty=format:"%h %ai (%an) | %s" --shortstat | ruby ~/Sites/personal/utilities/git-log-hoc.rb | less -RS'
+alias gd='git diff'
+alias gb='git branch'
+
+# Phoenix shortcuts
+alias mt='mix test'
+alias mps='iex -S mix phx.server'
+alias chr='echo "chromedriver" && chromedriver'
+alias hexdocs='mix hex.docs offline'
+
+autoload -U colors && colors # thanks to https://stackoverflow.com/a/2534676
+autoload -Uz vcs_info # Git branch info - thanks to https://tinyurl.com/27my4u42
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats '(%b) '
+setopt PROMPT_SUBST # enable prompt substitution for the git branch name
+PROMPT='%{$fg[green]%}»%{$reset_color%} %1~ %{$fg[green]%}${vcs_info_msg_0_}%{$reset_color%}$ '
+
+# Add ASDF to path
+. $(brew --prefix asdf)/libexec/asdf.sh
+
+# Retain iex history (thanks to https://stackoverflow.com/a/45405071/1729692)
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# Add Postgres to path, and set compile flags just in case
+export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/postgresql@13/lib"
+export CPPFLAGS="-I/usr/local/opt/postgresql@13/include"
