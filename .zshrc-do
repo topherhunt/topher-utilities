@@ -1,4 +1,4 @@
-# Topher's ZSH profile (for DO work only)
+# Topher's ZSH profile (for DO MBA)
 
 alias ll='ls -la'
 alias cheat='code ~/Sites/personal/cheatsheets/'
@@ -19,8 +19,12 @@ alias gb='git branch'
 alias mt='mix test'
 alias mps='iex -S mix phx.server'
 alias chr='echo "chromedriver" && chromedriver'
-alias hexdocs='mix hex.docs offline'
+alias hexdocs='mix hex.docs offline' # For caching docs when I'm travelling
 
+# Add Homebrew to PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Customize ZSH prompt
 autoload -U colors && colors # thanks to https://stackoverflow.com/a/2534676
 autoload -Uz vcs_info # Git branch info - thanks to https://tinyurl.com/27my4u42
 precmd() { vcs_info }
